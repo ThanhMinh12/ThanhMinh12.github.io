@@ -2,7 +2,8 @@
 
 Personal portfolio: <https://thanhminh12.github.io/>
 
-A compact static page featuring Detour, Fretwork, and SceneSeek.
+A compact static page featuring Detour, Fretwork, and SceneSeek, alongside
+internships, teaching and research experience, and Purdue University education.
 Built with HTML and CSS, with native HTML disclosures for optional project
 details. No JavaScript, external fonts, build tools, or runtime dependencies.
 
