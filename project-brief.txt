@@ -1,0 +1,24 @@
+Thanh Bui Minh | GitHub: https://github.com/ThanhMinh12
+Selected software engineering projects
+
+DETOUR | Java, Spring Boot, JavaScript, PostgreSQL, AWS
+- Built a collaborative travel app for trips, itineraries, reservation metadata, and shared expenses.
+- Designed PostgreSQL-compatible APIs for accounts, activities, reservations, and group expense workflows.
+- Implemented exact-cent net balances and minimum-transfer settlement search for up to 12 non-zero balances, with a greedy fallback for larger groups.
+Live HTTPS preview: https://mkmuk8wzzz.us-east-2.awsapprunner.com
+Source: https://github.com/ThanhMinh12/Detour
+Note: The preview uses temporary H2 storage; PostgreSQL production infrastructure is supplied in source. The current frontend uses JavaScript, not React/TypeScript.
+
+FRETWORK | Python, FastAPI, React, TypeScript
+- Built an audio pipeline that reconciles guitar-model predictions and independent Basic Pitch review to generate chord-aware MusicXML and TAB.
+- Developed a responsive React/TypeScript interface for uploads, asynchronous job polling, and TAB, chord, and artifact previews.
+- Added FastAPI endpoints connecting the interface to background transcription jobs and persistent output history.
+Stage: Local implementation. Full real-audio verification of the new web workflow and hosted deployment remain pending.
+
+SCENESEEK | C++, CMake, Python, FastAPI, React, TypeScript, PyTorch
+- Implemented a multimodal video-search MVP with text, image, and clip query interfaces and a PyTorch/CLIP embedding adapter.
+- Built a C++ cosine-similarity retrieval core for indexed frame embeddings.
+- Implemented ordered sequence matching over fixed playback-rate hypotheses to locate corresponding video segments.
+Stage: Local implementation. Synthetic indexing and algorithm tests pass; real-model quality evaluation and large-library performance benchmarks remain pending.
+
+Tests and status are verification notes, not accuracy or performance guarantees.
