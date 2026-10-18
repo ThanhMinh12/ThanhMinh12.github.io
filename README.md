@@ -2,7 +2,7 @@
 
 Personal portfolio: <https://thanhminh12.github.io/>
 
-A compact portfolio with brief experience summaries and project descriptions
+A blush-pink portfolio with grouped, left-aligned experience entries and project descriptions
 beside real application screenshots and demo/source links. Built with HTML, CSS,
 and small, dependency-free JavaScript enhancements: active section navigation
 and keyboard-accessible image previews. Reduced-motion preferences are respected;
