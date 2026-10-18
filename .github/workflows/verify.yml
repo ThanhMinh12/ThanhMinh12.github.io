@@ -1,0 +1,38 @@
+name: Portfolio checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install browser tools
+        run: |
+          pip install playwright==1.55.0
+          playwright install --with-deps chromium
+      - name: Check layout, concise copy, accessibility, and image previews
+        run: |
+          python -m http.server 4317 --bind 127.0.0.1 > /tmp/portfolio-server.log 2>&1 &
+          preview_pid=$!
+          trap 'kill "$preview_pid" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:4317/ >/dev/null; then break; fi
+            sleep 1
+          done
+          python scripts/smoke_ui.py --url http://127.0.0.1:4317 --screenshots /tmp/portfolio-ui
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: portfolio-ui-verification
+          path: /tmp/portfolio-ui/

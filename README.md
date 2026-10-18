@@ -2,10 +2,11 @@
 
 Personal portfolio: <https://thanhminh12.github.io/>
 
-A compact static page featuring Detour, Fretwork, and SceneSeek, alongside
-internships, teaching and research experience, and Purdue University education.
-Built with HTML and CSS. No JavaScript, external fonts, build tools, or runtime
-dependencies.
+A compact portfolio with brief experience summaries and project descriptions
+beside real application screenshots and demo/source links. Built with HTML, CSS,
+and small, dependency-free JavaScript enhancements: active section navigation
+and keyboard-accessible image previews. Reduced-motion preferences are respected;
+all content and links remain usable without JavaScript. No build step is needed.
 
 GitHub Pages publishes the root of the `main` branch. To preview locally:
 
@@ -13,6 +14,12 @@ GitHub Pages publishes the root of the `main` branch. To preview locally:
 python3 -m http.server 4317
 ```
 
-Project screenshots and descriptions reflect the current implementations.
-Detour has a temporary hosted preview. Fretwork and SceneSeek are verified
-locally and link to their public source repositories; their hosting is pending.
+Browser regression checks (requires Python Playwright and its Chromium browser):
+
+```bash
+python scripts/smoke_ui.py --url http://127.0.0.1:4317
+```
+
+Detour has a temporary AWS preview. Fretwork and SceneSeek run their React/FastAPI
+stacks on existing free Hugging Face Spaces; GPU queues and quotas apply, and
+uploaded files expire after an hour. Screenshots show the real application UIs.

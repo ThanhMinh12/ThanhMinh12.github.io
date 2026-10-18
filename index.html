@@ -3,23 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="Thanh Bui Minh — projects, experience at OneKiwi and Teko Solution, and teaching and research at Purdue University.">
+  <meta name="theme-color" content="#fafbf8">
+  <meta name="description" content="Thanh Bui Minh. Software engineer. Purdue University. Experience, selected projects, and source code.">
   <link rel="canonical" href="https://thanhminh12.github.io/">
   <meta property="og:title" content="Thanh Bui Minh — Software Engineer">
-  <meta property="og:description" content="Selected projects in full-stack development, audio ML, and video search.">
+  <meta property="og:description" content="Experience and selected projects: Detour, Fretwork, and SceneSeek.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://thanhminh12.github.io/">
   <meta property="og:image" content="https://thanhminh12.github.io/assets/social.svg">
   <title>Thanh Bui Minh — Software Engineer</title>
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <link rel="stylesheet" href="/styles.css">
+  <script src="/script.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="page">
-    <header>
-      <a class="monogram" href="#top" aria-label="Thanh Bui Minh, home">tbm.</a>
+    <header class="site-header">
+      <a class="monogram" href="#top" aria-label="Thanh Bui Minh, home">tbm<span>.</span></a>
       <nav aria-label="Main navigation">
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
@@ -29,83 +30,100 @@
 
     <main id="main">
       <section class="intro" id="top" aria-labelledby="intro-title">
-        <p class="eyebrow">Software engineer</p>
-        <h1 id="intro-title">Thanh Bui Minh</h1>
-        <p class="intro-copy">Web apps and AI tools.</p>
+        <p class="eyebrow"><span class="intro-dot" aria-hidden="true"></span>Software engineer</p>
+        <h1 id="intro-title">Thanh Bui Minh<span>.</span></h1>
+        <p class="intro-copy">Purdue University</p>
+        <a class="intro-link" href="#projects">Explore my projects <span aria-hidden="true">↓</span></a>
       </section>
 
       <section class="experience" id="experience" aria-labelledby="experience-title">
-        <div class="section-heading"><h2 id="experience-title">Experience</h2></div>
+        <div class="section-heading"><h2 id="experience-title">Experience</h2><span aria-hidden="true">01 /</span></div>
         <article class="experience-item">
           <div class="experience-role"><h3>OneKiwi</h3><p>Software Engineer Intern</p></div>
-          <p class="experience-date"><time datetime="2026-06">Jun 2026</time> – <time datetime="2026-08">Aug 2026</time></p>
-          <p class="experience-summary">Optimized computer-vision inference on NPU hardware, reducing LPRNet p99 latency from <strong>4 s to 0.54 s</strong>.</p>
+          <p class="experience-summary">Edge AI optimization</p>
+          <p class="experience-date"><time datetime="2026-06">Jun</time> – <time datetime="2026-08">Aug 2026</time></p>
         </article>
         <article class="experience-item">
           <div class="experience-role"><h3>Purdue University</h3><p>Undergraduate Teaching Assistant</p></div>
+          <p class="experience-summary">Algorithms and discrete mathematics</p>
           <p class="experience-date"><time datetime="2026-01">Jan 2026</time> – Present</p>
-          <p class="experience-summary">Led discrete-math and algorithms recitations, held office hours, and graded coursework for <strong>400 students</strong>.</p>
         </article>
         <article class="experience-item">
           <div class="experience-role"><h3>Teko Solution</h3><p>Software Engineer Intern</p></div>
-          <p class="experience-date"><time datetime="2025-06">Jun 2025</time> – <time datetime="2025-08">Aug 2025</time></p>
-          <p class="experience-summary">Built Google ADK chatbots supporting <strong>1M+ users</strong> and improved p99 time-to-first-token by <strong>60%</strong> with vLLM.</p>
+          <p class="experience-summary">AI agents and inference</p>
+          <p class="experience-date"><time datetime="2025-06">Jun</time> – <time datetime="2025-08">Aug 2025</time></p>
         </article>
         <article class="experience-item">
           <div class="experience-role"><h3>The Data Mine · Purdue</h3><p>Data Science Researcher</p></div>
+          <p class="experience-summary">Predictive maintenance research</p>
           <p class="experience-date"><time datetime="2024-08">Aug 2024</time> – <time datetime="2025-05">May 2025</time></p>
-          <p class="experience-summary">Developed predictive-maintenance models: <strong>80% accuracy</strong> with a PyTorch autoencoder, evaluated against Isolation Forest baselines.</p>
         </article>
       </section>
 
       <section id="projects" aria-labelledby="projects-title">
-        <div class="section-heading"><h2 id="projects-title">Projects</h2></div>
+        <div class="section-heading"><h2 id="projects-title">Selected projects</h2><span aria-hidden="true">02 /</span></div>
         <div class="projects">
           <article class="project" id="detour">
-            <a class="project-image detour-image" href="https://mkmuk8wzzz.us-east-2.awsapprunner.com" target="_blank" rel="noopener noreferrer" aria-label="Open Detour live preview">
-              <img src="/assets/detour.jpg" width="1440" height="1000" alt="Detour travel app sign-in screen" loading="lazy">
-            </a>
             <div class="project-content">
-              <div class="project-heading"><h3>Detour</h3><span class="status live">Live preview</span></div>
-              <p>Plan group trips, split expenses, and settle balances with fewer payments.</p>
-              <p class="stack">Java · Spring Boot · React · TypeScript · PostgreSQL · AWS</p>
-              <div class="project-links"><a href="https://mkmuk8wzzz.us-east-2.awsapprunner.com" target="_blank" rel="noopener noreferrer">Demo ↗</a><a href="https://github.com/ThanhMinh12/Detour" target="_blank" rel="noopener noreferrer">Source ↗</a></div>
-              <p class="note">Preview data is temporary.</p>
+              <p class="project-category">Travel planning</p>
+              <h3>Detour</h3>
+              <p class="project-description">Plan group trips and split expenses.</p>
+              <ul class="stack" aria-label="Detour technologies"><li>Java</li><li>Spring Boot</li><li>React</li><li>PostgreSQL</li></ul>
+            </div>
+            <div class="project-media">
+              <a class="project-image detour-image" href="/assets/detour.jpg" data-preview="Detour" aria-label="Enlarge Detour preview">
+                <img src="/assets/detour.jpg" width="1440" height="1000" alt="Detour travel app sign-in screen" loading="lazy">
+                <span class="expand-hint" aria-hidden="true">Expand ↗</span>
+              </a>
+              <div class="project-caption"><span>Temporary preview</span><div class="project-links"><a href="https://mkmuk8wzzz.us-east-2.awsapprunner.com" target="_blank" rel="noopener noreferrer">Demo ↗</a><a href="https://github.com/ThanhMinh12/Detour" target="_blank" rel="noopener noreferrer">Source ↗</a></div></div>
             </div>
           </article>
 
           <article class="project" id="fretwork">
-            <div class="project-image fretwork-image"><img src="/assets/fretwork.jpg" width="1440" height="1000" alt="Fretwork guitar transcription interface" loading="lazy"></div>
             <div class="project-content">
-              <div class="project-heading"><h3>Fretwork</h3><span class="status live">Live demo</span></div>
-              <p>Guitar audio to sheet music, chord labels, and TAB, with background processing and previews.</p>
-              <p class="stack">Python · FastAPI · React · TypeScript</p>
-              <div class="project-links"><a href="https://huggingface.co/spaces/ThanhMinh12/Fretwork" target="_blank" rel="noopener noreferrer">Demo ↗</a><a href="https://github.com/ThanhMinh12/Fretwork" target="_blank" rel="noopener noreferrer">Source ↗</a></div>
-              <p class="note">React + FastAPI · Free GPU demo · Temporary files.</p>
+              <p class="project-category">Music transcription</p>
+              <h3>Fretwork</h3>
+              <p class="project-description">Turn guitar recordings into sheet music.</p>
+              <ul class="stack" aria-label="Fretwork technologies"><li>Python</li><li>FastAPI</li><li>React</li><li>TypeScript</li></ul>
+            </div>
+            <div class="project-media">
+              <a class="project-image fretwork-image" href="/assets/fretwork.jpg" data-preview="Fretwork" aria-label="Enlarge Fretwork preview">
+                <img src="/assets/fretwork.jpg" width="960" height="640" alt="Fretwork: a short introduction and guitar recording upload" loading="lazy">
+                <span class="expand-hint" aria-hidden="true">Expand ↗</span>
+              </a>
+              <div class="project-caption"><span>Live demo</span><div class="project-links"><a href="https://thanhminh12-fretwork.hf.space/" target="_blank" rel="noopener noreferrer">Demo ↗</a><a href="https://github.com/ThanhMinh12/Fretwork" target="_blank" rel="noopener noreferrer">Source ↗</a></div></div>
             </div>
           </article>
 
           <article class="project" id="sceneseek">
-            <div class="project-image sceneseek-image"><img src="/assets/sceneseek.jpg" width="1440" height="1000" alt="SceneSeek text, image, and clip search interface" loading="lazy"></div>
             <div class="project-content">
-              <div class="project-heading"><h3>SceneSeek</h3><span class="status live">Live demo</span></div>
-              <p>Search inside videos using text, an image, or a reference clip.</p>
-              <p class="stack">C++ · FastAPI · React · PyTorch</p>
-              <div class="project-links"><a href="https://huggingface.co/spaces/ThanhMinh12/SceneSeek" target="_blank" rel="noopener noreferrer">Demo ↗</a><a href="https://github.com/ThanhMinh12/SceneSeek" target="_blank" rel="noopener noreferrer">Source ↗</a></div>
-              <p class="note">React + FastAPI · Free GPU demo · Temporary library.</p>
+              <p class="project-category">Video search</p>
+              <h3>SceneSeek</h3>
+              <p class="project-description">Find moments in videos using text, images, or clips.</p>
+              <ul class="stack" aria-label="SceneSeek technologies"><li>C++</li><li>Python</li><li>React</li><li>PyTorch</li></ul>
+            </div>
+            <div class="project-media">
+              <a class="project-image sceneseek-image" href="/assets/sceneseek.jpg" data-preview="SceneSeek" aria-label="Enlarge SceneSeek preview">
+                <img src="/assets/sceneseek.jpg" width="960" height="640" alt="SceneSeek: a short introduction and video upload" loading="lazy">
+                <span class="expand-hint" aria-hidden="true">Expand ↗</span>
+              </a>
+              <div class="project-caption"><span>Live demo</span><div class="project-links"><a href="https://thanhminh12-sceneseek.hf.space/" target="_blank" rel="noopener noreferrer">Demo ↗</a><a href="https://github.com/ThanhMinh12/SceneSeek" target="_blank" rel="noopener noreferrer">Source ↗</a></div></div>
             </div>
           </article>
         </div>
       </section>
 
       <section class="background" aria-labelledby="background-title">
-        <h2 id="background-title" class="visually-hidden">Background</h2>
-        <div><h3>Education</h3><p>Purdue University</p></div>
-        <div><h3>Skills</h3><p>Python, Java, C++, TypeScript, React, Spring Boot, FastAPI, PyTorch, PostgreSQL, AWS.</p></div>
+        <div class="section-heading"><h2 id="background-title">Toolkit</h2><span aria-hidden="true">03 /</span></div>
+        <ul class="skills" aria-label="Technical skills"><li>Python</li><li>Java</li><li>C++</li><li>TypeScript</li><li>React</li><li>Spring Boot</li><li>FastAPI</li><li>PyTorch</li><li>PostgreSQL</li><li>AWS</li><li>Docker</li><li>Linux</li></ul>
       </section>
     </main>
 
-    <footer><span>© 2026 Thanh Bui Minh</span><a href="https://github.com/ThanhMinh12" target="_blank" rel="noopener noreferrer">GitHub ↗</a></footer>
+    <footer><span>© 2026 Thanh Bui Minh</span><a href="#top">Back to top ↑</a></footer>
   </div>
+  <dialog class="image-dialog" aria-labelledby="preview-title">
+    <div class="dialog-heading"><h2 id="preview-title">Project preview</h2><button type="button" class="close-preview" aria-label="Close preview" autofocus>Close ×</button></div>
+    <img class="dialog-image" alt="">
+  </dialog>
 </body>
 </html>
