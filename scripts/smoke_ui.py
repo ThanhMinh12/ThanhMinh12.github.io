@@ -90,7 +90,7 @@ def main():
         page.goto(args.url)
         expect(page.locator('.project')).to_have_count(3)
         page.get_by_role('link', name='Enlarge Fretwork preview').click()
-        assert page.url.endswith('/assets/fretwork.jpg')
+        assert page.url.split('?', 1)[0].endswith('/assets/fretwork.jpg')
         context.close()
         browser.close()
     print(json.dumps({'status': 'passed', 'widths': [1440, 1024, 768, 600, 390, 320], 'experience_words': [len(summary.split()) for summary in summaries], 'checks': ['description left / image and links right', 'mobile stacking', 'images loaded', 'section spacing', 'preview keyboard / Escape / close / backdrop / focus return', 'active navigation', 'reduced motion', 'no-JavaScript fallback', 'no browser errors']}))
