@@ -36,9 +36,12 @@ def main():
         response = page.goto(args.url)
         assert response.ok
         expect(page.get_by_role('heading', level=1)).to_have_text('Thanh Bui Minh.')
+        expect(page).to_have_title('Thanh Bui Minh')
+        assert 'software engineer' not in page.locator('.intro').inner_text().lower()
         assert 'Web apps and AI' not in page.locator('body').inner_text()
-        summaries = page.locator('.experience-summary').all_text_contents()
-        assert len(summaries) == 4 and all(0 < len(summary.split()) < 5 for summary in summaries), summaries
+        expect(page.locator('.experience-summary')).to_have_count(0)
+        expect(page.locator('.experience-item')).to_have_count(4)
+        expect(page.locator('.experience-item p')).to_have_count(8)
         expect(page.locator('.project')).to_have_count(3)
         palette = page.evaluate('''() => {
             const style = getComputedStyle(document.documentElement);
@@ -59,11 +62,8 @@ def main():
                 company = experience.locator('h3').bounding_box()
                 role = experience.locator('.experience-role').bounding_box()
                 date = experience.locator('.experience-date').bounding_box()
-                meta = experience.locator('.experience-meta').bounding_box()
-                summary = experience.locator('.experience-summary').bounding_box()
-                assert abs(company['x'] - role['x']) < 1 and abs(company['x'] - summary['x']) < 1, width
+                assert abs(company['x'] - role['x']) < 1, width
                 assert company['y'] + company['height'] <= role['y'] + 1, width
-                assert meta['y'] + meta['height'] <= summary['y'] + 1, width
                 assert abs(date['x'] - role['x']) < 1 and date['y'] >= role['y'] + role['height'], width
                 positions.append(company['x'])
             assert max(positions) - min(positions) < 1, (width, positions)
@@ -125,7 +125,7 @@ def main():
         assert page.url.split('?', 1)[0].endswith('/assets/fretwork.jpg')
         context.close()
         browser.close()
-    print(json.dumps({'status': 'passed', 'widths': [1440, 1024, 768, 600, 390, 320], 'experience_words': [len(summary.split()) for summary in summaries], 'checks': ['grouped left-aligned experience entries including dates', 'pink palette with 4.5:1 text contrast', 'description left / image and links right', 'images loaded', 'section spacing', 'preview keyboard / Escape / close / backdrop / focus return', 'active navigation', 'reduced motion', 'no-JavaScript fallback', 'no browser errors']}))
+    print(json.dumps({'status': 'passed', 'widths': [1440, 1024, 768, 600, 390, 320], 'experience_descriptions': 0, 'checks': ['name-only title and no software-engineer headline', 'experience limited to company, role, and dates', 'grouped left-aligned experience entries including dates', 'pink palette with 4.5:1 text contrast', 'description left / image and links right', 'images loaded', 'section spacing', 'preview keyboard / Escape / close / backdrop / focus return', 'active navigation', 'reduced motion', 'no-JavaScript fallback', 'no browser errors']}))
 
 
 if __name__ == '__main__':

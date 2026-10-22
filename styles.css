@@ -32,8 +32,6 @@ nav a::after { position: absolute; content: ""; height: 2px; left: 0; right: 0; 
 nav a[aria-current="location"] { color: var(--accent); }
 nav a[aria-current="location"]::after { transform: scaleX(1); }
 .intro { padding: 106px 0 96px; }
-.eyebrow { display: flex; align-items: center; gap: 9px; color: var(--muted); font-size: 13px; margin-bottom: 18px; }
-.intro-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
 h1 { font-size: clamp(40px, 6.6vw, 72px); font-weight: 550; letter-spacing: -3.2px; line-height: 1.12; }
 .intro-copy { font-size: 18px; color: var(--muted); margin-top: 20px; }
 .intro-link { display: inline-flex; align-items: center; gap: 16px; margin-top: 34px; padding: 9px 16px; border: 1px solid var(--line); border-radius: 999px; background: var(--tint); font-size: 13px; text-decoration: none; color: var(--accent); }
@@ -52,7 +50,6 @@ h3 { font-size: 17px; font-weight: 600; line-height: 1.4; letter-spacing: -.3px;
 .experience-item h3 { font-size: 18px; }
 .experience-meta { display: grid; gap: 2px; margin-top: 5px; color: var(--muted); font-size: 13px; }
 .experience-date { font-size: 12px; font-variant-numeric: tabular-nums; }
-.experience-summary { margin-top: 10px; color: var(--accent); font-size: 14px; }
 .project { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 64px; padding: 48px 0; border-bottom: 1px solid var(--line); align-items: center; }
 .project:last-child { border-bottom: 0; padding-bottom: 0; }
 .project-content, .project-media { min-width: 0; }
