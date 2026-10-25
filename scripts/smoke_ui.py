@@ -35,7 +35,9 @@ def main():
         page.on('pageerror', lambda error: errors.append(str(error)))
         response = page.goto(args.url)
         assert response.ok
-        expect(page.get_by_role('heading', level=1)).to_have_text('Thanh Bui Minh.')
+        expect(page.get_by_role('heading', level=1)).to_have_text('Thanh Bui Minh')
+        expect(page.locator('.monogram')).to_have_count(0)
+        assert 'tbm' not in page.locator('body').inner_text().lower()
         expect(page).to_have_title('Thanh Bui Minh')
         assert 'software engineer' not in page.locator('.intro').inner_text().lower()
         assert 'Web apps and AI' not in page.locator('body').inner_text()
@@ -47,9 +49,13 @@ def main():
             const style = getComputedStyle(document.documentElement);
             return Object.fromEntries(['ink', 'muted', 'accent', 'surface', 'tint'].map(name => [name, style.getPropertyValue('--'+name).trim()]));
         }''')
-        assert page.locator('html').evaluate('(node) => getComputedStyle(node).backgroundColor') == 'rgb(255, 245, 249)'
+        assert page.locator('html').evaluate('(node) => getComputedStyle(node).backgroundColor') == 'rgb(255, 255, 255)'
+        assert page.evaluate('''async () => {
+            await document.fonts.load('400 16px "Source Sans 3"');
+            return [...document.fonts].some(font => font.family.includes('Source Sans 3') && font.status === 'loaded');
+        }''')
         for foreground in ('ink', 'muted', 'accent'):
-            for background in ('#fff5f9', palette['surface'], palette['tint']):
+            for background in ('#ffffff', palette['surface'], palette['tint']):
                 assert contrast(palette[foreground], background) >= 4.5, (foreground, background)
         for width in (1440, 1024, 768, 600, 390, 320):
             page.set_viewport_size({'width': width, 'height': 1000})
@@ -125,7 +131,7 @@ def main():
         assert page.url.split('?', 1)[0].endswith('/assets/fretwork.jpg')
         context.close()
         browser.close()
-    print(json.dumps({'status': 'passed', 'widths': [1440, 1024, 768, 600, 390, 320], 'experience_descriptions': 0, 'checks': ['name-only title and no software-engineer headline', 'experience limited to company, role, and dates', 'grouped left-aligned experience entries including dates', 'pink palette with 4.5:1 text contrast', 'description left / image and links right', 'images loaded', 'section spacing', 'preview keyboard / Escape / close / backdrop / focus return', 'active navigation', 'reduced motion', 'no-JavaScript fallback', 'no browser errors']}))
+    print(json.dumps({'status': 'passed', 'widths': [1440, 1024, 768, 600, 390, 320], 'experience_descriptions': 0, 'checks': ['name without dot or monogram', 'experience limited to company, role, and dates', 'grouped left-aligned experience entries including dates', 'white palette with 4.5:1 text contrast', 'self-hosted Source Sans 3 loaded', 'description left / image and links right', 'images loaded', 'section spacing', 'preview keyboard / Escape / close / backdrop / focus return', 'active navigation', 'reduced motion', 'no-JavaScript fallback', 'no browser errors']}))
 
 
 if __name__ == '__main__':

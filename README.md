@@ -2,11 +2,12 @@
 
 Personal portfolio: <https://thanhminh12.github.io/>
 
-A blush-pink portfolio with grouped, left-aligned experience entries and project descriptions
+A white portfolio with grouped, left-aligned experience entries and project descriptions
 beside real application screenshots and demo/source links. Built with HTML, CSS,
 and small, dependency-free JavaScript enhancements: active section navigation
 and keyboard-accessible image previews. Reduced-motion preferences are respected;
 all content and links remain usable without JavaScript. No build step is needed.
+Source Sans 3 is self-hosted under its bundled SIL Open Font License.
 
 GitHub Pages publishes the root of the `main` branch. To preview locally:
 
