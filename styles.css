@@ -71,8 +71,6 @@ h3 { font-size: 17px; font-weight: 600; line-height: 1.4; letter-spacing: -.3px;
 .project-links { display: flex; gap: 22px; font-size: 13px; }
 .project-links a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; }
 .project-links a:hover { text-decoration: underline; }
-.skills { display: flex; flex-wrap: wrap; gap: 10px; padding: 26px 0 0; margin: 0; list-style: none; color: var(--muted); font-size: 14px; }
-.skills li { padding: 5px 11px; border: 1px solid var(--line); border-radius: 4px; background: var(--surface); }
 footer { margin-top: 100px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 20px; padding: 26px 0 34px; font-size: 12px; color: var(--muted); }
 footer a { text-decoration: none; }
 .image-dialog { width: min(1100px, calc(100% - 40px)); max-height: calc(100dvh - 48px); padding: 18px; border: 1px solid var(--line); border-radius: 6px; background: #ffffff; color: var(--ink); box-shadow: 0 24px 100px #20212440; }
@@ -104,7 +102,6 @@ body:has(.image-dialog[open]) { overflow: hidden; }
   .project-description { max-width: 34ch; font-size: 16px; margin-top: 10px; }
   .stack { margin-top: 16px; }
   .project-caption { padding-top: 12px; }
-  .skills { font-size: 13px; gap: 8px; }
   footer { margin-top: 72px; font-size: 12px; }
   .image-dialog { width: calc(100% - 24px); padding: 12px; }
 }

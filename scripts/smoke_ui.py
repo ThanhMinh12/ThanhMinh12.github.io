@@ -45,6 +45,8 @@ def main():
         expect(page.locator('.experience-item')).to_have_count(4)
         expect(page.locator('.experience-item p')).to_have_count(8)
         expect(page.locator('.project')).to_have_count(3)
+        expect(page.get_by_role('heading', name='Toolkit', exact=True)).to_have_count(0)
+        expect(page.locator('.skills')).to_have_count(0)
         palette = page.evaluate('''() => {
             const style = getComputedStyle(document.documentElement);
             return Object.fromEntries(['ink', 'muted', 'accent', 'surface', 'tint'].map(name => [name, style.getPropertyValue('--'+name).trim()]));
@@ -127,6 +129,7 @@ def main():
         page = context.new_page()
         page.goto(args.url)
         expect(page.locator('.project')).to_have_count(3)
+        expect(page.get_by_role('heading', name='Toolkit', exact=True)).to_have_count(0)
         page.get_by_role('link', name='Enlarge Fretwork preview').click()
         assert page.url.split('?', 1)[0].endswith('/assets/fretwork.jpg')
         context.close()
